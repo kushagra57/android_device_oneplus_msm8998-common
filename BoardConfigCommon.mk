@@ -63,6 +63,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a73
 TARGET_USES_UEFI := true
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_PHONY_TARGETS := true
 
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -73,7 +74,7 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_ena
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true 
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
 BOARD_KERNEL_CMDLINE += loop.max_part=7
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -85,7 +86,8 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
 TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := 6607189
+#TARGET_KERNEL_CLANG_VERSION := 6607189
+TARGET_USE_LATEST_CLANG := true
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true

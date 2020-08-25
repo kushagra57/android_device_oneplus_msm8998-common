@@ -559,3 +559,7 @@ $(call inherit-product, device/oppo/common/common.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+PRODUCT_BOARD_PLATFORM := msm8998
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
