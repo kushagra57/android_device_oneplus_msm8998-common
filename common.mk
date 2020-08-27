@@ -26,12 +26,20 @@ $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+#$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-system
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-system
+#PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-system
+
+# Overlays
+#DEVICE_PACKAGE_OVERLAYS += \
+#	$(LOCAL_PATH)/overlay \
+#	$(LOCAL_PATH)/overlay-lineage
+
+#PRODUCT_ENFORCE_RRO_TARGETS := \
+#    framework-res
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -246,12 +254,21 @@ PRODUCT_PACKAGES += \
     libbatching \
     libgeofencing \
     libgnss \
-    libgnsspps \
+    libwifi-hal-ctrl \
     libsynergy_loc_api
+    
+ PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
+    $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+    $(LOCAL_PATH)/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
 # GPS Configurations
-PRODUCT_COPY_FILES += \
-   $(call find-copy-subdir-files,*,${LOCAL_PATH}/configs/gps,$(TARGET_COPY_OUT_VENDOR)/etc)
+#PRODUCT_COPY_FILES += \
+#   $(call find-copy-subdir-files,*,${LOCAL_PATH}/configs/gps,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Health
 PRODUCT_PACKAGES += \
@@ -302,8 +319,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_msm8998
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.oneplus_msm8998
+#PRODUCT_PACKAGES += \
+ #   vendor.lineage.livedisplay@2.0-service.oneplus_msm8998
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -483,12 +500,12 @@ PRODUCT_PACKAGES += \
     thermal.msm8998
 
 # Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oneplus_msm8998
+#PRODUCT_PACKAGES += \
+  #  vendor.lineage.touch@1.0-service.oneplus_msm8998
 
 # Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+#PRODUCT_PACKAGES += \
+ #   vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
@@ -562,4 +579,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 PRODUCT_BOARD_PLATFORM := msm8998
 PRODUCT_USES_QCOM_HARDWARE := true
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+#PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)

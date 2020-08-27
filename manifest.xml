@@ -407,7 +407,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+  <!-- <hal format="hidl">
         <name>vendor.lineage.livedisplay</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -419,7 +419,7 @@
             <name>ISunlightEnhancement</name>
             <instance>default</instance>
         </interface>
-    </hal>
+    </hal> -->
     <hal format="hidl">
         <name>vendor.lineage.power</name>
         <transport>hwbinder</transport>
@@ -438,7 +438,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+ <!--   <hal format="hidl">
         <name>vendor.lineage.trust</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -446,7 +446,7 @@
             <name>IUsbRestrict</name>
             <instance>default</instance>
         </interface>
-    </hal>
+    </hal> -->
     <hal format="hidl">
         <name>vendor.nxp.nxpese</name>
         <transport>hwbinder</transport>
@@ -650,7 +650,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>1.0</version>
         <interface>
             <name>IPerf</name>
             <instance>default</instance>
