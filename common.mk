@@ -194,9 +194,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
 
 # Dex
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    SystemUI
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    Launcher3QuickStep \
+#    SystemUI
 
 # Display
 PRODUCT_PACKAGES += \
